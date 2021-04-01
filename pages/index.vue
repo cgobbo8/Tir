@@ -8,7 +8,7 @@
         </div>
         <div class="liens">
           <nuxt-link class="voir-article" to="/articles"
-            >Voir lessdsd articles</nuxt-link
+            >Voir les articles</nuxt-link
           >
         </div>
       </div>
@@ -30,6 +30,10 @@
             <button @click="goToZotero">
               <img class="header-btn-img" src="@/assets/zotero.png" alt="" />
               Zotero
+            </button>
+            <button @click="goToOverleaf">
+              <img class="header-btn-img overleaf" src="@/assets/overleaf.png" alt="" />
+              Overleaf
             </button>
           </div>
         </div>
@@ -69,12 +73,7 @@
         ><scrollComponent class="scrollComponent"></scrollComponent
       ></nuxt-link>
     </section>
-    <div class="separator"></div>
-    <section></section>
-    <div class="separator"></div>
-    <section id="pres">
-      <h1>Pres</h1>
-    </section>
+    
   </div>
 </template>
 
@@ -107,7 +106,10 @@ export default {
       window.location.replace("http://www.w3schools.com")
     },
     goToZotero() {
-
+      window.location.replace("http://www.w3schools.com")
+    },
+    goToOverleaf() {
+      window.location.replace("http://www.w3schools.com")
     },
     formatCodeBlock() {
       let code = document.querySelector(".code");
@@ -471,6 +473,11 @@ section {
       }
       height: 40px;
       opacity: 0.7;
+
+      &.overleaf {
+        margin-left: -10px;
+        margin-right: 5px;
+      }
     }
   }
 }
