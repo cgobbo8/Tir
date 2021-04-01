@@ -12,13 +12,15 @@ export default {
         ],
         link: [
             { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-            { rel: "preconnect", href: "https://fonts.gstatic.com" },
-            { rel: "stylesheet", href: "//fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" }
+            // { rel: "preconnect", href: "https://fonts.gstatic.com" },
+            // { rel: "stylesheet", href: "//fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" }
         ]
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [],
+    css: [
+        "~/layouts/global.css",
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],

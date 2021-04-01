@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: local("IBM Plex Sans"), url(~/assets/fonts/IBMPlexSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: local("Source Code Pro"), url(~/assets/fonts/SourceCodePro-Regular.ttf) format("truetype");
+}
