@@ -8,7 +8,7 @@
         </div>
         <div class="liens">
           <nuxt-link class="voir-article" to="/articles"
-            >Voir les articles</nuxt-link
+            >Voir lessdsd articles</nuxt-link
           >
         </div>
       </div>
