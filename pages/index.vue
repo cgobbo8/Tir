@@ -69,7 +69,7 @@
           </pre>
         </div>
       </div>
-      <nuxt-link to="#pres"
+      <nuxt-link v-if="false" to="#pres"
         ><scrollComponent class="scrollComponent"></scrollComponent
       ></nuxt-link>
     </section>
@@ -103,13 +103,13 @@ export default {
   },
   methods: {
     goToGit() {
-      window.location.replace("http://www.w3schools.com")
+      window.location.replace("https://github.com/cgobbo8/Tir")
     },
     goToZotero() {
-      window.location.replace("http://www.w3schools.com")
+      window.location.replace("https://www.zotero.org")
     },
     goToOverleaf() {
-      window.location.replace("http://www.w3schools.com")
+      window.location.replace("https://fr.overleaf.com/read/xsryvzmmgbqb")
     },
     formatCodeBlock() {
       let code = document.querySelector(".code");
@@ -195,6 +195,11 @@ export default {
 .page-leave-to {
   opacity: 0;
 }
+
+* {
+  transition: .4s;
+}
+
 html,
 body {
   scroll-behavior: smooth;
@@ -224,10 +229,9 @@ body {
 }
 
 section {
-  overflow: hidden;
-  height: 90vh;
   padding: 20px 100px;
   position: relative;
+  height: 90vh;
 }
 
 .separator {
@@ -309,6 +313,7 @@ section {
 }
 
 .scrollComponent {
+  display: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,6 +326,7 @@ section {
 }
 
 .bloc-code {
+  transition: .4s;
   background-color: #0c162d;
   min-width: 700px;
   position: relative;
@@ -481,4 +487,101 @@ section {
     }
   }
 }
+
+@media screen and (max-width : 1400px) {
+  .bloc-code {
+    min-width: 80%;
+  }
+}
+
+@media screen and (max-width : 1400px) {
+
+  section {
+    height: auto;
+  }
+  .header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .bloc-title {
+    margin-top: 100px;
+    width: 100%;
+    max-width: 100%;
+    h1 {
+      color: #fff;
+    }
+  }
+
+  .bloc-code {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .scrollComponent {
+    
+    transform: translateY(100px);
+  }
+
+  .blob-background {
+    width: 200vw;
+  }
+
+  .logo {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width:939px) {
+  .bloc-code {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width : 735px) {
+  section {
+    padding: 20px 20px;
+  }
+
+  .blob-background {
+    width: 300vw;
+  }
+}
+@media screen and (max-width : 600px) {
+  .bloc-code {
+    width: 100%;
+    min-width: 0px;
+  }
+
+  .hide-cursor {
+    display: none;
+  }
+
+  .bloc-code pre {
+    margin-left: -80px;
+
+    code {
+      font-size: .9em;
+    }
+  }
+}
+
+@media screen and (max-width : 580px) {
+  .btns-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button {
+      height: 80%;
+    }
+  }
+}
+
+@media screen and (max-width : 440px) {
+  .bloc-code pre code{
+      font-size: .8em;
+    
+  }
+}
+
 </style>
