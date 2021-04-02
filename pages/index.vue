@@ -55,7 +55,7 @@
                 }
                 return listeReturn;
               }
-              let listeDouble = multiplaction(liste,2)
+              let listeDouble = multiplicaction(liste,2)
 
 
               // Méthode fonctionnelle
@@ -230,8 +230,8 @@ body {
 
 section {
   padding: 20px 100px;
-  position: relative;
   height: 90vh;
+  overflow: hidden;
 }
 
 .separator {
