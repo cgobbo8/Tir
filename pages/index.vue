@@ -1,7 +1,7 @@
 <template>
   <div>
     <img src="@/assets/blob.svg" alt="" class="blob-background" />
-    <section class="section">
+    <section class="section first">
       <div class="nav">
         <div class="logo">
           <h2>Projet TIR</h2>
@@ -23,18 +23,18 @@
             : langages, paradigme et écosystème
           </h1>
           <div class="btns-header">
-            <button @click="goToGit">
+            <a href="https://github.com/cgobbo8/Tir">
               <img class="header-btn-img" src="@/assets/github.png" alt="" />
               Github
-            </button>
-            <button @click="goToZotero">
-              <img class="header-btn-img" src="@/assets/zotero.png" alt="" />
-              Zotero
-            </button>
-            <button @click="goToOverleaf">
+            </a>
+            <a href="/Poster.pdf" download="">
+              <img class="header-btn-img" src="@/assets/presentation.png" alt="" />
+              Poster
+            </a>
+            <a href="/Projet_TIR.pdf" download="">
               <img class="header-btn-img overleaf" src="@/assets/overleaf.png" alt="" />
-              Overleaf
-            </button>
+              Rapport
+            </a>
           </div>
         </div>
         <div class="bloc-code">
@@ -48,19 +48,19 @@
           <pre>
             <code ref="code" class="code">
               // Méthode impérative
-              function multiplaction (liste, n) {
+              function multiplication (liste, n) {
                 let listeReturn = [];
                 for(let i = 0; i < liste.length; i++) {
                   listeReturn.push(liste[i]*n);
                 }
                 return listeReturn;
               }
-              let listeDouble = multiplicaction(liste,2)
+              let listeDouble = multiplication(liste,2);
 
 
               // Méthode fonctionnelle
               let multiplication = x => y => x*y;
-              let double = multiplaction(2);
+              let double = multiplication(2);
               let listeDouble = liste.map( v => double(v));      
                    
             </code><span class="curdor"></span>
@@ -72,6 +72,9 @@
       <nuxt-link v-if="false" to="#pres"
         ><scrollComponent class="scrollComponent"></scrollComponent
       ></nuxt-link>
+    </section>
+    <section class="section-poster">
+      <img class="poster" src="../assets/poster.png" alt="">
     </section>
     
   </div>
@@ -230,8 +233,11 @@ body {
 
 section {
   padding: 20px 100px;
-  height: 90vh;
   overflow: hidden;
+
+  &.first {
+    height: 90vh;
+  }
 }
 
 .separator {
@@ -452,7 +458,7 @@ section {
 }
 
 .header {
-  button {
+  a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -469,6 +475,8 @@ section {
     cursor: pointer;
     transition: 0.4s;
     outline: none;
+    text-decoration: none;
+    color: #151d25;
     &:hover {
       transform: scale(0.97);
       box-shadow: 0 1px 4px 3px rgba(0, 0, 0, 0.02);
@@ -496,7 +504,7 @@ section {
 
 @media screen and (max-width : 1400px) {
 
-  section {
+  section, section.first {
     height: auto;
   }
   .header {
@@ -536,6 +544,11 @@ section {
   .bloc-code {
     min-width: 100%;
   }
+
+  .poster {
+    margin: 200px 0;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width : 735px) {
@@ -564,6 +577,8 @@ section {
       font-size: .9em;
     }
   }
+
+  
 }
 
 @media screen and (max-width : 580px) {
@@ -575,12 +590,28 @@ section {
       height: 80%;
     }
   }
+
+  .section-poster .poster {
+    width: 100%;
+  }
+
 }
 
 @media screen and (max-width : 440px) {
   .bloc-code pre code{
       font-size: .8em;
     
+  }
+}
+
+.section-poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .poster {
+    margin: 400px 0;
+    width: 80%;
   }
 }
 
