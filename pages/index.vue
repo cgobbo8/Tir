@@ -69,12 +69,9 @@
           </pre>
         </div>
       </div>
-      <nuxt-link v-if="false" to="#pres"
-        ><scrollComponent class="scrollComponent"></scrollComponent
-      ></nuxt-link>
     </section>
     <section class="section-poster">
-      <img class="poster" src="@/assets/poster.png" alt="">
+      <img class="poster" src="@/assets/Poster.png" alt="">
     </section>
     
   </div>
